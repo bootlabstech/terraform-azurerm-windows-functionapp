@@ -23,6 +23,7 @@ resource "azurerm_windows_function_app" "example" {
   storage_account_name       = azurerm_storage_account.example.name
   storage_account_access_key = azurerm_storage_account.example.primary_access_key
   service_plan_id            = azurerm_service_plan.example.id
+  virtual_network_subnet_id = var.virtual_network_subnet_id
 
   site_config {
     ftps_state             = var.ftps_state

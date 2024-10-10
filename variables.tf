@@ -50,3 +50,7 @@ variable "vnet_route_all_enabled" {
   default = false
 
 }
+variable "virtual_network_subnet_id" {
+  type = string
+  
+}
