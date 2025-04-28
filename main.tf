@@ -18,6 +18,7 @@ resource "azurerm_service_plan" "example" {
   depends_on = [ azurerm_storage_account.example ]
 }
 
+
 resource "azurerm_windows_function_app" "example" {
   name                = var.name
   resource_group_name = var.resource_group_name
@@ -36,4 +37,14 @@ resource "azurerm_windows_function_app" "example" {
   }
 
   depends_on = [ azurerm_service_plan.example ]
+  lifecycle {
+    ignore_changes = [
+      tags,
+      app_settings,
+      connection_string,
+      site_config.0.application_insights_connection_string,
+      site_config.0.application_insights_key,
+      sticky_settings,
+    ] 
+  }
 }
