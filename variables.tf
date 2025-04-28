@@ -20,6 +20,14 @@ variable "account_replication_type" {
   default = "LRS"
 
 }
+variable "allow_nested_items_tobe_public" {
+  type = bool
+  default = false
+}
+variable "public_network_access_enabled" {
+  type = bool
+  default = false
+}
 variable "os_type" {
   type    = string
   default = "Windows"

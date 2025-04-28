@@ -4,6 +4,8 @@ resource "azurerm_storage_account" "example" {
   location                 = var.location
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
+  allow_nested_items_to_be_public = var.allow_nested_items_tobe_public
+  public_network_access_enabled = var.public_network_access_enabled
 }
 
 resource "azurerm_service_plan" "example" {
