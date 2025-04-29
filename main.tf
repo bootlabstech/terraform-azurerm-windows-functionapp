@@ -37,6 +37,7 @@ resource "azurerm_windows_function_app" "example" {
   }
 
   depends_on = [ azurerm_service_plan.example ]
+  
   lifecycle {
     ignore_changes = [
       tags,
